@@ -69,15 +69,3 @@ class PrestoPack:
                 continue
             else:
                 break
-
-
-if __name__ == '__main__':
-    pp = PrestoPack(host='9.134.72.234', port=8080, user='presto', catalog='mysql', schema='ziyezhang')
-
-    query = pp.create_query("SELECT * FROM monitor_cdb ")
-    print query
-    i = 0
-    for d in pp.get_query_result(query.get('next_uri')):
-        print (i)
-        print(d[:2])
-        i +=1
